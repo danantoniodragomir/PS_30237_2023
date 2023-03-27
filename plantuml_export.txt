@@ -1,0 +1,40 @@
+@startuml
+!define primary_key(x) <b><color:#b8861b><&key></color> x</b>
+!define foreign_key(x) <color:#aaaaaa><&key></color> x
+!define column(x) <color:#efefef><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+table( utilizator ) {
+  primary_key( id ): INTEGER 
+  column( nume ): STRING
+  column( prenume ): STRING
+  column( rol ): STRING
+  column( adresa ): STRING
+}
+table( produs ) {
+  primary_key( id ): INTEGER 
+  foreign_key( id utilizator ): INTEGER <<FK>>
+  column( denumire produs ): STRING 
+  column( pret ): DOUBLE
+  column( model ): STRING
+  column( mecanism ): STRING
+  column( producator ): STRING
+  column( tara origine producator ): STRING
+}
+table( cos ){
+  primary_key( id ): INTEGER
+  foreign_key(id utilizator): INTEGER <<FK>>
+  foreign_key(iduri produse): INTEGER[] <<FK>> 
+}
+table( comanda ){
+  primary_key( id ): INTEGER
+  foreign_key( id cos): INTEGER <<FK>>
+  column( starea comenzii ): STRING
+  column( data plasare comanda ): DATETIME
+  column( data livrare comanda ): DATETIME
+}
+
+utilizator ||--|{ produs
+utilizator ||--|{ cos
+utilizator ||--|{ comanda
+cos ||--|{ produs
+@enduml
