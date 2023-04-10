@@ -1,4 +1,4 @@
-package WatchMarket.Utilizator;
+package WatchMarket.utilizator;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -54,7 +54,7 @@ public class UtilizatorController {
     }
 
     @DeleteMapping("/utilizatori/{id}")
-    void deleteEmployee(@PathVariable Long id) {
+    void deleteUtilizator(@PathVariable Long id) {
         repository.deleteById(id);
     }
 }

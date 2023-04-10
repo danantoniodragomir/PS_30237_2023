@@ -1,4 +1,4 @@
-package WatchMarket.Utilizator;
+package WatchMarket.utilizator;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
