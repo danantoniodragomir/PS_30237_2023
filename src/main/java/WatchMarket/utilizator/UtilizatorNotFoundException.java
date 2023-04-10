@@ -1,4 +1,4 @@
-package WatchMarket.Utilizator;
+package WatchMarket.utilizator;
 
 public class UtilizatorNotFoundException extends RuntimeException{
     UtilizatorNotFoundException(Long id) {

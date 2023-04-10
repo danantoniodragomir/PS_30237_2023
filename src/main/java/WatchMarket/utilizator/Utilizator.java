@@ -1,4 +1,4 @@
-package WatchMarket.Utilizator;
+package WatchMarket.utilizator;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,10 +32,6 @@ public class Utilizator {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNume() {
         return nume;
     }
@@ -66,5 +62,9 @@ public class Utilizator {
 
     public void setAdresa(String adresa) {
         this.adresa = adresa;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
